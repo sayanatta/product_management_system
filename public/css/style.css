@@ -1,0 +1,63 @@
+.container .form-group.registration {
+    margin-top: 70px;
+}
+
+.container .form-group.login {
+    margin-top: 200px;
+}
+
+.container .form-group.registration, .form-group.login {
+    border: 1px solid black;
+    padding: 52px;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    padding: 3px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.section .row .col-md-4 {
+    border: 1px solid black;
+    padding: 29px;
+    border-radius: 5px;
+}
+
+.section .row .col-md-4 a {
+    color: black;
+    text-decoration: none;
+}
+
+.validation_message {
+    color: red;
+    font-size: 14px;
+}
+
+.loader2 {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 9999;
+    text-align: center;
+    padding-top: 22%;
+}
