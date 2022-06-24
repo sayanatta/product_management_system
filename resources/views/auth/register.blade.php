@@ -25,7 +25,8 @@
             <div class="form-group">
                 <label for="phone">Phone Number</label>
                 <input type="text" class="form-control" placeholder="Please Enter Phone Number"
-                       onkeypress="validate(this.events)" value="{{old('phone')}}" name="phone" id="phone">
+                       onkeypress="validate(this.events)" value="{{old('phone')}}" name="phone" id="phone" onkeyup="hide_error_msg(this.name)">
+                <span class="validation_message" id="phone_err"></span>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
@@ -57,22 +58,33 @@
             };
 
             document.getElementById('email').addEventListener('keyup', debounce(event => {
-                checkEmail();
+                checkEmailPhone('email');
             }, 2000));
 
-            const checkEmail = () => {
+            document.getElementById('phone').addEventListener('keyup', debounce(event => {
+                checkEmailPhone('phone');
+            }, 2000));
+
+            const checkEmailPhone = (type) => {
                 let email = document.getElementById('email').value;
+                let phone = document.getElementById('phone').value;
                 $.ajax({
                     url: '{{route('check_email')}}',
                     type: 'post',
                     data: {
                         _token: '{{csrf_token()}}',
-                        email: email
+                        email: email,
+                        phone: phone,
+                        type:type
                     },
                     success: function (data) {
                         if (data.status == "success") {
                             if(data.msg == true){
-                                document.getElementById('email_err').innerHTML = 'This Email Already Exist';
+                                if(type == 'email'){
+                                    document.getElementById('email_err').innerHTML = 'This Email Already Exist';
+                                }else{
+                                    document.getElementById('phone_err').innerHTML = 'This Phone Already Exist';
+                                }
                             }
                         } else {
                             Swal.fire({

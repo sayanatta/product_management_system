@@ -66,8 +66,13 @@ class AuthController extends Controller
     public function check_email(Request $request)
     {
         try {
-            $input['email'] = $request->email;
-            $rules = array('email' => 'unique:users,email');
+            if ($request->type == 'email'){
+                $input['email'] = $request->email;
+                $rules = array('email' => 'unique:users,email');
+            }else{
+                $input['phone'] = $request->phone;
+                $rules = array('phone' => 'unique:users,phone');
+            }
             $validator = Validator::make($input, $rules);
             if ($validator->fails()) {
                 return response()->json(['status' => 'success', 'msg' => true]);

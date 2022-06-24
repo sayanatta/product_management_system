@@ -16,7 +16,7 @@
                 <input type="password" placeholder="Please Enter Password" class="form-control" name="password" id="password">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a href="{{route('register')}}" class="btn btn-success">Register <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+            <a href="{{route('register')}}" class="btn btn-success">Registration <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
         </form>
     </div>
 @endsection
