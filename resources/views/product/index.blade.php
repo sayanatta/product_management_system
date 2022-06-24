@@ -6,10 +6,13 @@
                 Products
             </h3>
             <div class="text-right mb-3">
-                <a href="{{route('products.create')}}" class="btn btn-primary btn-sm">
+                <a href="{{route('dashboard')}}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Back">
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                </a>
+                <a href="{{route('products.create')}}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Create">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 </a>
-                <a href="{{route('logout')}}" class="btn btn-dark btn-sm">
+                <a href="{{route('logout')}}" class="btn btn-dark btn-sm" data-toggle="tooltip" title="Logout">
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>
             </div>
@@ -21,12 +24,7 @@
                     </div>
                 </div>
             </div>
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissable custom-success-box" style="margin: 15px;">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong> {{ session('success') }} </strong>
-                </div>
-            @endif
+            @include('messages')
         </div>
         <table>
             <thead>

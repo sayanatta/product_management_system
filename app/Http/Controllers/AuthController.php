@@ -102,7 +102,7 @@ class AuthController extends Controller
             $username = $request->email;
             $password = $request->password;
             if (Auth::attempt(array('email' => $username, 'password' => $password))) {
-                return redirect()->route('dashboard')->with('success', 'Login Successfully');
+                return redirect()->route('dashboard')->with('success', 'Hello ' . Auth::user()['name'] . ', You Are Login Successfully');
             } else {
                 return redirect()->back()->with('error', 'Login Unsuccessfully!!! Please Check Your Credentials');
             }

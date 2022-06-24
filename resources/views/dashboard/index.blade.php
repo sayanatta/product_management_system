@@ -4,12 +4,13 @@
         <div class="form-items">
             <h3 class="text-left">Dashboard</h3>
             <div class="text-right mb-3">
-                <a href="{{route('logout')}}" class="btn btn-dark btn-sm">
+                <a href="{{route('logout')}}" class="btn btn-dark btn-sm" data-toggle="tooltip" title="Logout">
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
         <div class="section">
+            @include('messages')
             <div class="row">
                 <div class="col-md-4 text-center">
                     <a href="{{route('products.index')}}">Products</a>

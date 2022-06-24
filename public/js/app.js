@@ -33,3 +33,8 @@ function validate(evt) {
 function getDeleteRoute($route) {
     document.getElementById('confirm_del').setAttribute("action", $route);
 }
+
+/*** TOOLTIP ***/
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+});

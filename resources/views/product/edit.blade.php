@@ -4,10 +4,10 @@
         <div class="form-items">
             <h3 class="text-left">Product Update</h3>
             <h3 class="text-right">
-                <a href="{{route('products.index')}}" class="btn btn-primary btn-sm">
+                <a href="{{route('products.index')}}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Back">
                     <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
                 </a>
-                <a href="{{route('logout')}}" class="btn btn-dark btn-sm">
+                <a href="{{route('logout')}}" class="btn btn-dark btn-sm" data-toggle="tooltip" title="Logout">
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </a>
             </h3>
