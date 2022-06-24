@@ -184,6 +184,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        ProductSize::where('product_id',$product['id'])->delete();
         $product->delete();
         return redirect()->back()->with('success','Item Deleted Successfully');
     }

@@ -7,10 +7,10 @@
             <td>{{$product['name']}}</td>
             <td>{{$product['unique_id']}}</td>
             <td>
-                <a href="{{route('products.edit',$product)}}" class="btn btn-warning btn-sm">
+                <a href="{{route('products.edit',$product)}}" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Edit">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </a>
-                <a href="javascript:void(0)" data-toggle="modal"
+                <a href="javascript:void(0)" data-toggle="modal" data-toggle="tooltip" title="Delete"
                    data-target="#deleteModal"
                    data-placement="bottom" title="Delete"
                    onclick="getDeleteRoute('{{route('products.destroy',$product)}}')"
